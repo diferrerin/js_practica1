@@ -4,7 +4,7 @@ console.log(" Inicio del primer Desafio entregable. ");
 
 alert("---  PRIMER DESAFIO    ---  \n --- Elige la opcion para testear las diferentes iteraciones:   \n ");
 
-let entrada = prompt("Escribe una de las opciones (WHILE,FOR,DOWHILE,ESC para salir) ");
+let entrada = prompt("Escribe una de las opciones (WHILE, FOR, DOWHILE, IF, ESC para salir) ");
 //Repetimos hasta que se ingresa "ESC"
 while(entrada != "ESC" ){
    switch (entrada) {
@@ -12,11 +12,11 @@ while(entrada != "ESC" ){
        case "WHILE":
             alert("Test WHILE");
             let aux = prompt("Para salir de la iteracion While escriba la palabra mágica ALOHOMORA ");
-            while(aux != "ESC" ){
+            while(aux != "ALOHOMORA" ){
                 alert("El usuario ingresó la palabra: "+ aux);
                 aux = prompt("Ingresar ALOHOMORA para salir");
             }
-            alert("Palabra Mágica para salir: "+ aux);
+            alert("Palabra Mágica correcta: "+ aux);
             break;
 
         case "FOR":
@@ -28,16 +28,39 @@ while(entrada != "ESC" ){
 
         case "DOWHILE":
             alert("Test DO WHILE");
+            let suma = 0;
+            let num = 0;
+            do {
+                suma += num;
+                num = parseInt(prompt('Ingrese un numero, para salir ingrese un numero negativo : '));
+            } while(num >= 0)
 
+            console.log(`La suma de todo es ${suma}.`);
+            break;
+
+        case "IF":
+            alert("Test IF");
+            let unNumero = parseInt(prompt('Ingrese un numero (10 para salir) : '));
+            let salida = 0;
+            while(salida != 10 ){
+                alert("Numero ingresado :  "+ unNumero);
+                unNumero = prompt("Ingrese un numero (10 para salir) : ");
+                if (unNumero == 10){
+                    salida = unNumero;
+                    console.log("Se ingreso el 10 para salir.");
+                }
+            }
             break;
 
        default:
            alert("No eligió una opción posible.");
            break;
    }
-   entrada = prompt(" Escribe una de las opciones ( WHILE, FOR, DOWHILE, ESC para salir) ");
+   entrada = prompt(" Escribe una de las opciones ( WHILE, FOR, DOWHILE, IF, ESC para salir) ");
 };
 
+alert("---  FIN PRIMER DESAFIO    ---");
+console.log(" Fin del primer Desafio entregable. Se ejecutó correctamente ");
 
 /* 
 let numeroUno = parseInt(prompt("Ingrese un Número: "));
@@ -45,19 +68,5 @@ let numeroDos = parseInt(prompt("Ingrese otro Número: "));
 document.write("<p>"+ "La suma de "+ numeroUno + " y "+ numeroDos + " es " + (numeroUno+numeroDos)+"</p>");
 */
 
-console.log(" Fin del primer Desafio entregable. Se ejecutó correctamente ");
 
-/* 
-Consigna: Tomando como base los ejemplos anteriores de la estructura for y while, crear un algoritmo que
- repita un bloque de instrucciones. En cada repetición es necesario efectuar una operación o
-  comparación para obtener una salida por alerta o consola.
->>Aspectos a incluir en el entregable:
-Archivo HTML y Archivo JS, referenciado en el HTML por etiqueta <script src="js/miarchivo.js"></script>,
- que incluya la definición de un algoritmo en JavaScript que emplee bucles e instrucciones condicionales.
- ejemplos:
-Pedir número mediante prompt y sumarle otro número en cada repetición,realizando una salida por cada resultado
-Pedir un texto mediante prompt, concatenar un valor en cada repetición, realizando una salida por cada resultado,
- hasta que se ingresa “ESC”.
-Pedir un número por prompt, repetir la salida del mensaje “Hola” la cantidad de veces ingresada.
 
-*/
