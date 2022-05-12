@@ -8,18 +8,29 @@ let entrada = prompt("Escribe una de las opciones (WHILE,FOR,DOWHILE,ESC para sa
 //Repetimos hasta que se ingresa "ESC"
 while(entrada != "ESC" ){
    switch (entrada) {
+
        case "WHILE":
             alert("Test WHILE");
+            let aux = prompt("Para salir de la iteracion While escriba la palabra mágica ALOHOMORA ");
+            while(aux != "ESC" ){
+                alert("El usuario ingresó la palabra: "+ aux);
+                aux = prompt("Ingresar ALOHOMORA para salir");
+            }
+            alert("Palabra Mágica para salir: "+ aux);
             break;
+
         case "FOR":
             alert("Test FOR de 0 a 5");
             for (let indice = 0; indice <= 5 ; indice++) {
                 alert(indice);
             };
             break;
+
         case "DOWHILE":
             alert("Test DO WHILE");
+
             break;
+
        default:
            alert("No eligió una opción posible.");
            break;
@@ -37,7 +48,9 @@ document.write("<p>"+ "La suma de "+ numeroUno + " y "+ numeroDos + " es " + (nu
 console.log(" Fin del primer Desafio entregable. Se ejecutó correctamente ");
 
 /* 
-Consigna: Tomando como base los ejemplos anteriores de la estructura for y while, crear un algoritmo que repita un bloque de instrucciones. En cada repetición es necesario efectuar una operación o comparación para obtener una salida por alerta o consola.
+Consigna: Tomando como base los ejemplos anteriores de la estructura for y while, crear un algoritmo que
+ repita un bloque de instrucciones. En cada repetición es necesario efectuar una operación o
+  comparación para obtener una salida por alerta o consola.
 >>Aspectos a incluir en el entregable:
 Archivo HTML y Archivo JS, referenciado en el HTML por etiqueta <script src="js/miarchivo.js"></script>,
  que incluya la definición de un algoritmo en JavaScript que emplee bucles e instrucciones condicionales.
